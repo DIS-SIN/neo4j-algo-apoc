@@ -1,0 +1,5 @@
+#ignore the directories
+conf/
+data/
+logs/
+import/
