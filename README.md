@@ -77,4 +77,4 @@ Neo4j 3.5.5 community edition, 1GB for heap size, 1GB for pagecache, all APOC an
         sudo usermod -aG docker $USER
         sudo setfacl -m user:$USER:rw /var/run/docker.sock
 
-- on Windows, explicit permissions might be required to access the local directories and manually has to be granted.
+- on Windows, explicit permissions might be required to: access the local directories and port mapping (manually has to be granted)
