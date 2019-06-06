@@ -2,7 +2,7 @@
 
 ## The empowered version of Neo4j with apoc and algo libraries
 
-### A. (Optional) Configure access to local directory using `set_env.sh`. 
+### A. Configure access to local directory using `set_env.sh`. 
 
         source ./set_env.sh
 
@@ -57,12 +57,12 @@ What does it configure:
 
 ## Notes:
 
-#### Following configuration options are by default. 
-Neo4j 3.5.5 community edition, 2GB for heap size, 2GB for pagecache, all APOC and ALGO functions/procedures are available, import from/export to local physical files are allowed, HTTP connection timeouts (to external servers) are configured, and job thread pool is also configured as below.
+1. Following configuration options are by default. 
+Neo4j 3.5.5 community edition, 1GB for heap size, 1GB for pagecache, all APOC and ALGO functions/procedures are available, import from/export to local physical files are allowed, HTTP connection timeouts (to external servers) are configured, and job thread pool is also configured as below.
 
-- dbms.memory.heap.initial_size=2G
-- dbms.memory.heap.max_size=2G
-- dbms.memory.pagecache.size=2G
+- dbms.memory.heap.initial_size=1G
+- dbms.memory.heap.max_size=1G
+- dbms.memory.pagecache.size=1G
 - dbms.security.procedures.unrestricted=apoc.\*,algo.\*
 - apoc.export.file.enabled=true
 - apoc.import.file.enabled=true
@@ -70,3 +70,11 @@ Neo4j 3.5.5 community edition, 2GB for heap size, 2GB for pagecache, all APOC an
 - apoc.http.timeout.read=120000
 - apoc.jobs.pool.num_threads=4
 - apoc.jobs.schedule.num_threads=4
+
+2. Troubleshooting
+- on Linux distros, because there are many ways to install docker, sometime permissions are not correctly set. Try the following (note that `$USER` is your username)
+
+        sudo usermod -aG docker $USER
+        sudo setfacl -m user:$USER:rw /var/run/docker.sock
+
+- on Windows, explicit permissions might be required to access the local directories and manually has to be granted.
