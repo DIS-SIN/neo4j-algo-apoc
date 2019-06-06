@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export NEO4J_DIR=$PWD
+echo $NEO4J_DIR
+
+export NEO4J_DIR_CONF=$NEO4J_DIR/conf
+export NEO4J_DIR_DATA=$NEO4J_DIR/data
+export NEO4J_DIR_LOGS=$NEO4J_DIR/logs
+export NEO4J_DIR_IMPT=$NEO4J_DIR/import
+
+echo NEO4J_DIR_CONF=$NEO4J_DIR/conf
+echo NEO4J_DIR_DATA=$NEO4J_DIR/data
+echo NEO4J_DIR_LOGS=$NEO4J_DIR/logs
+echo NEO4J_DIR_IMPT=$NEO4J_DIR/import
