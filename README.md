@@ -35,6 +35,9 @@ What does it configure:
 
         docker-compose up
 
+        (optional:to detach the container process)
+        docker-compose up -d 
+
 - set password, type in your browser: `localhost:7474`. default password is `neo4j`
 
 - check if APOC and ALGO libraries are ready by typing in to the neo4j browser:
