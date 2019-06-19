@@ -3,3 +3,4 @@ conf/
 data/
 logs/
 import/
+.DS_Store
